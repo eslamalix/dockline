@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dockline – a glass widget bar for Windows 11</title>
+<meta name="description" content="Music, a focus timer, battery and more in one slim glass bar on the edge of your Windows screen. Never touches your taskbar. One price, 7-day free trial.">
+<meta property="og:title" content="Dockline – a glass widget bar for Windows 11">
+<meta property="og:description" content="Music, focus, battery and more in one glass bar. Your taskbar stays as it is.">
+<meta property="og:image" content="img/poster-1.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/Dockline.png">
+<style>
+  :root {
+    --bg: #0b1020; --ink: #eef2ff; --muted: #a9b3cf; --line: rgba(255,255,255,.12);
+    --card: rgba(255,255,255,.06); --accent: #5fd4e8; --accent2: #b49cff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.55 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+    background-image: radial-gradient(900px 600px at 15% -10%, rgba(40,160,170,.28), transparent 60%),
+                      radial-gradient(900px 700px at 100% 20%, rgba(110,80,220,.22), transparent 60%);
+    background-repeat: no-repeat;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 19px; }
+  .brand img { width: 32px; height: 32px; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: 15px; }
+  .hero { display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; align-items: center; padding: 48px 0 56px; }
+  h1 { font: 700 clamp(36px, 5.2vw, 60px)/1.05 "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif; margin: 0 0 18px; letter-spacing: -.02em; }
+  h1 em { font-style: normal; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: var(--muted); font-size: 19px; margin: 0 0 26px; }
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+  .cta img { height: 52px; display: block; }
+  .price { color: var(--muted); font-size: 15px; }
+  .price b { color: var(--ink); }
+  .shot { width: 100%; border-radius: 16px; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.45); display: block; }
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font: 650 30px/1.2 "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif; margin: 0 0 10px; }
+  .sub { color: var(--muted); margin: 0 0 30px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; margin-bottom: 44px; }
+  .feature:nth-child(even) .txt { order: 2; }
+  .feature h3 { font-size: 24px; margin: 0 0 8px; }
+  .feature p { color: var(--muted); margin: 0; }
+  .widgets { columns: 2; column-gap: 36px; padding: 0; list-style: none; margin: 0; }
+  .widgets li { break-inside: avoid; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .widgets b { display: block; }
+  .widgets span { color: var(--muted); font-size: 15px; }
+  .buy { text-align: center; }
+  .buy .cta { justify-content: center; margin-top: 18px; }
+  details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--muted); margin: 8px 0 0; }
+  footer { color: var(--muted); font-size: 14px; padding: 30px 0 50px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; }
+  @media (max-width: 820px) {
+    .hero, .feature { grid-template-columns: 1fr; }
+    .feature:nth-child(even) .txt { order: 0; }
+    .grid3 { grid-template-columns: 1fr; }
+    .widgets { columns: 1; }
+    nav { display: none; }
+    .hero { padding-top: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><img src="img/Dockline.png" alt="">Dockline</div>
+    <nav><a href="#widgets">Widgets</a><a href="#safe">Safe by design</a><a href="#faq">FAQ</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Your widgets, <em>on the edge</em> of your screen</h1>
+      <p class="lead">Music, a focus timer, battery and more in one slim glass bar for Windows 11. Your taskbar stays exactly as it is.</p>
+      <div class="cta">
+        <a href="https://apps.microsoft.com/detail/9P75PDWDBD1K?mode=direct"><img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft"></a>
+        <div class="price"><b>Free for 7 days</b><br>then one price, no subscription</div>
+      </div>
+    </div>
+    <img class="shot" src="img/screenshot-1.png" alt="Dockline bar on the right edge of a Windows 11 desktop with the Now Playing panel open">
+  </div>
+
+  <section id="safe">
+    <h2>Built to be safe to try</h2>
+    <p class="sub">Most Windows customization tools patch the taskbar or Explorer. Dockline does not.</p>
+    <div class="grid3">
+      <div class="card"><h3>Leaves Windows alone</h3><p>No taskbar replacement, no Explorer patches. Uninstall it like any Store app and there is nothing to undo.</p></div>
+      <div class="card"><h3>Never steals focus</h3><p>Click the bar while you type in another window. Your cursor stays where it was.</p></div>
+      <div class="card"><h3>Fast and native</h3><p>A native Windows 11 app that shows up in about a fifth of a second and stays quiet in the background.</p></div>
+    </div>
+  </section>
+
+  <section id="widgets">
+    <h2>One click to the things you check all day</h2>
+    <p class="sub">Pick the widgets you want and put the bar on any edge.</p>
+
+    <div class="feature">
+      <div class="txt"><h3>Stay in flow</h3><p>Start a focus session from the bar and hear a gentle sound when it is time for a break. The ring is always in view, so you never need to check your phone.</p></div>
+      <img class="shot" src="img/screenshot-2.png" alt="Focus timer panel">
+    </div>
+    <div class="feature">
+      <div class="txt"><h3>Battery and devices at a glance</h3><p>Your laptop battery and your connected Bluetooth devices. Many mice and keyboards report their battery to Windows; some headphones do not, and Dockline says so instead of guessing.</p></div>
+      <img class="shot" src="img/screenshot-4.png" alt="Devices and battery panel">
+    </div>
+    <div class="feature">
+      <div class="txt"><h3>A warmer screen for your evenings</h3><p>Turn Night Light on and set its warmth right from the bar, without digging through Settings.</p></div>
+      <img class="shot" src="img/screenshot-5.png" alt="Night Light panel">
+    </div>
+
+    <ul class="widgets">
+      <li><b>Now Playing</b><span>Play, pause and skip for music and videos in any app, with the cover</span></li>
+      <li><b>Focus timer</b><span>Pomodoro-style sessions with short breaks</span></li>
+      <li><b>Devices and battery</b><span>Laptop and connected Bluetooth devices</span></li>
+      <li><b>System activity</b><span>Live CPU, RAM and GPU</span></li>
+      <li><b>Night Light</b><span>On, off and warmth</span></li>
+      <li><b>Theme</b><span>Switch Windows between light and dark in one click</span></li>
+      <li><b>Radio</b><span>Search and play thousands of internet radio stations</span></li>
+      <li><b>Quick actions</b><span>Keep awake, screen snip, lock, mute, empty the Recycle Bin</span></li>
+      <li><b>Clock</b><span>Always in view</span></li>
+    </ul>
+  </section>
+
+  <section id="vote">
+    <h2>Buy once. Every new widget is yours.</h2>
+    <p class="sub">A new widget about every two weeks, free for everyone who bought Dockline. You choose which one comes next.</p>
+    <div class="grid3">
+      <div class="card"><h3>Suggest</h3><p>Ask for the widget you miss, from a calendar to a clipboard history.</p></div>
+      <div class="card"><h3>Vote</h3><p>The most-voted idea is built next. <a href="https://github.com/eslamalix/dockline/discussions/categories/ideas">See the board</a>.</p></div>
+      <div class="card"><h3>Get it free</h3><p>It arrives as a normal Store update. No add-on, no subscription.</p></div>
+    </div>
+  </section>
+
+  <section class="buy">
+    <h2>Try every feature free for 7 days</h2>
+    <p class="sub">Then buy it once from the Microsoft Store. No subscription, no account, no ads.</p>
+    <div class="cta">
+      <a href="https://apps.microsoft.com/detail/9P75PDWDBD1K?mode=direct"><img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft"></a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <details><summary>Does it replace my taskbar?</summary><p>No. Dockline is a separate bar. The taskbar, Start menu and system tray stay exactly as Windows made them. Many people auto-hide the taskbar and keep Dockline visible, but that is up to you.</p></details>
+    <details><summary>Which music apps work with Now Playing?</summary><p>Any app that shows up in the Windows media controls: most music apps, video players, and browsers playing YouTube or other sites.</p></details>
+    <details><summary>Will it cover my windows?</summary><p>Choose: float over windows, auto-hide until you point at the edge, or reserve its space so windows stop beside it.</p></details>
+    <details><summary>Does it work on Windows 10?</summary><p>Yes, Windows 10 version 2004 or later, with a solid background instead of glass. Windows 11 is recommended.</p></details>
+    <details><summary>What happens after the trial?</summary><p>The bar hides itself and Settings offers the purchase through the Microsoft Store. Your layout is kept, so it comes back exactly as you left it after you buy.</p></details>
+    <details><summary>Do you collect my data?</summary><p>No account, no ads. Your settings stay on your PC. <a href="privacy.html">Privacy policy</a>.</p></details>
+  </section>
+
+  <footer>
+    <span>© 2026 Eslam Ali</span>
+    <span>Support: <a href="mailto:EslamAliGis@outlook.com">EslamAliGis@outlook.com</a></span>
+  </footer>
+</div>
+</body>
+</html>
