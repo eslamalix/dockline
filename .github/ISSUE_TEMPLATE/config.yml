@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Suggest or vote for a widget
+    url: https://github.com/eslamalix/dockline/discussions/categories/ideas
+    about: Ideas live in Discussions, where people can upvote them.

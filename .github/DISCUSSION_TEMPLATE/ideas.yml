@@ -1,0 +1,27 @@
+title: "Widget: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Check the list first: if someone already asked for it, upvote that one instead, so the votes add up.
+  - type: textarea
+    id: what
+    attributes:
+      label: What should the widget show or do?
+      description: One or two sentences.
+      placeholder: "Example: my next three calendar events, with a Join button for online meetings."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: When would you use it?
+      placeholder: "Example: I check my calendar ten times a day and always have to open Outlook."
+    validations:
+      required: true
+  - type: textarea
+    id: click
+    attributes:
+      label: What should happen when you click it? (optional)
+      placeholder: "Example: a panel with today's full agenda."
